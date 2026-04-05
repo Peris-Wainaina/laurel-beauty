@@ -9,30 +9,29 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-   int _currentIndex= 0;
-  final List<Widget> _pages= [
-    HomeScreen(),
-  ];
+  int _currentIndex = 0;
+  final List<Widget> _pages = [HomeScreen()];
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-      
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset('assets/images/Laurel logo.png', height: 50, fit: BoxFit.contain,),
+          padding: const EdgeInsets.symmetric(vertical: 5),
+          child: Image.asset(
+            'assets/images/Laurel logo.png',
+            height: 35,
+            fit: BoxFit.contain,
+          ),
         ),
-        
-
         actions: [Icon(Icons.person)],
       ),
-      body: _pages[_currentIndex] ,
-       bottomNavigationBar: BottomNavigationBar(
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) => setState(() {
-          _currentIndex =index;
+          _currentIndex = index;
         }),
         backgroundColor: Colors.white,
         selectedItemColor: const Color.fromARGB(255, 134, 54, 81),
